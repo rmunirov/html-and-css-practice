@@ -1,0 +1,63 @@
+.services {
+    background-color: #eeeeee;
+
+    &__content {
+        padding-top: 30px;
+
+        @media @screen-gt-m {
+            padding-top: 40px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-right: 19px;
+        margin-bottom: 30px;
+
+        @media @screen-gt-s {
+            margin-right: 0;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__image {
+        display: block;
+        margin-right: 20px;
+
+        @media @screen-gt-s {
+            margin-right: 10px;
+        }
+
+        @media @screen-gt-m {
+            margin-right: 30px;
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    @services-title: delivery, return, support;
+
+    each(@services-title, {
+        &__@{value}-text-container {
+            max-width: 211px;
+        }
+    });
+
+    @media @screen-gt-s {
+        &__delivery-text-container {
+            max-width: 119px;
+        }
+        &__return-text-container {
+            max-width: 160px;
+        }
+        &__support-text-container {
+            max-width: 122px;
+        }
+    }
+
+    &__text {
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+}
