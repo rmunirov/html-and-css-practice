@@ -1,46 +1,36 @@
 .footer {
     background-color: #212122;
+    padding-top: 30px;
+    padding-bottom: 22px;
 
-    &__content {
-        padding-top: 30px;
-        padding-bottom: 22px;
-
-        @media @screen-gt-s {
-            padding-bottom: 29px;
-        }
-
-        @media @screen-gt-m {
-            padding-top: 40px;
-            padding-bottom: 35px;
-        }
+    @media @screen-gt-s {
+        padding-bottom: 29px;
     }
 
-    &__social-items {
+    @media @screen-gt-m {
+        padding-top: 40px;
+        padding-bottom: 35px;
+    }
+
+    &__social-links {
         display: flex;
         gap: 15px;
         margin-bottom: 30px;
 
         @media @screen-gt-m {
-            align-self: flex-end;
             margin-bottom: 39px;
         }
     }
 
-    &__app-items {
-        display: flex;
-        gap: 8px;
+    &__app-links {
         margin-bottom: 30px;
-
-        @media @screen-gt-s {
-            justify-content: flex-end;
-        }
 
         @media @screen-gt-m {
             margin-bottom: 39px;
         }
     }
 
-    &__logo {
+    &__logo-container {
         display: none;
 
         @media @screen-gt-m {
@@ -48,6 +38,12 @@
             justify-content: flex-end;
             margin-bottom: 30px;
         }
+    }
+
+    &__logo {
+        display: block;
+        width: 46px;
+        height: 46px;
     }
 
     &__line {
@@ -61,36 +57,9 @@
 
     &__copyright {
         color: #999999;
+
         p {
             margin: 0;
         }
     }
-}
-
-@social-icons: facebook, twitter, vk, instagram;
-
-.footer-link-image(@icons) {
-    each(@icons, {
-        &_@{value} {
-            background-image: url('@{value}.svg');
-        }
-    });
-}
-
-.footer-social-link-icon {
-    display: block;
-    width: 36px;
-    height: 36px;
-
-    .footer-link-image(@social-icons);
-}
-
-@app-icons: app-store, google-play;
-
-.footer-app-link-icon {
-    display: block;
-    width: 140px;
-    height: 40px;
-
-    .footer-link-image(@app-icons);
 }
