@@ -1,0 +1,26 @@
+.app-links {
+    display: flex;
+    gap: 8px;
+
+    @media @screen-gt-s {
+        justify-content: flex-end;
+    }
+}
+
+.app-link-image(@icons) {
+    each(@icons, {
+        &_@{value} {
+            background-image: url('@{value}.svg');
+        }
+    });
+}
+
+@app-icons: app-store, google-play;
+
+.app-link-icon {
+    display: block;
+    width: 140px;
+    height: 40px;
+
+    .app-link-image(@app-icons);
+}
